@@ -125,7 +125,7 @@ socket.on("connect", function() {
     socket.on('motor_1', function (msg) {
         // Si el está activado el vuelo
         // permito actualizar el estado del motor
-        if(sengine.checked == true) {
+        if(data.volar == true) {
             const val = Number(msg);
             data.motores[0] = msg;
             m1.checked = msg;
@@ -134,7 +134,7 @@ socket.on("connect", function() {
     socket.on('motor_2', function (msg) {
         // Si el está activado el vuelo
         // permito actualizar el estado del motor
-        if(sengine.checked == true) {
+        if(data.volar == true) {
             const val = Number(msg);
             data.motores[1] = msg;
             m2.checked = msg;
@@ -143,7 +143,7 @@ socket.on("connect", function() {
     socket.on('motor_3', function (msg) {
         // Si el está activado el vuelo
         // permito actualizar el estado del motor
-        if(sengine.checked == true) {
+        if(data.volar == true) {
             const val = Number(msg);
             data.motores[2] = msg;
             m3.checked = msg;
@@ -152,7 +152,7 @@ socket.on("connect", function() {
     socket.on('motor_4', function (msg) {
         // Si el está activado el vuelo
         // permito actualizar el estado del motor
-        if(sengine.checked == true) {
+        if(data.volar == true) {
             const val = Number(msg);
             data.motores[3] = msg;
             m4.checked = msg;

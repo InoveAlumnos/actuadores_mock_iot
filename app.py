@@ -9,12 +9,9 @@ Se utiliza Flask para crear un generador de datos
 de telemetría simulando un Drone:
 - Motores
 - Luz ON/OFF
-- Acelerómetro
-- Giróscopo
-- GPS
 
 Ejecución: Lanzar el programa y abrir en un navegador la siguiente dirección URL
-https://IP:5006/
+http://IP:5007/
 '''
 
 __author__ = "Inove Coding School"
@@ -56,7 +53,6 @@ def mqtt_connect():
 def on_message(client, userdata, msg):
     topic = str(msg.topic)
     value = str(msg.payload.decode("utf-8"))
-    print(msg.topic, msg.payload.decode("utf-8"))
     if topic == "actuadores/volar":
         socketio.emit('volar', int(value))
     
@@ -82,11 +78,6 @@ def home():
     mqtt_connect()
     return render_template('index.html')
 
-
-@app.route('/luz/1/<val>')
-def light(val):
-    socketio.emit('luz_1', int(val))
-    return f"luz: {val}"
 
 # ---- Web sockets contra el frontend ----
 @socketio.on('luz_event')
