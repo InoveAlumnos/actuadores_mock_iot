@@ -24,7 +24,7 @@ Por defecto la aplicación busca conectarse a un broker MQTT local (localhost) e
 Puede controlar el estado de la luz del drone (ON=1, OFF=0) o desl sisetma de vuelo y motores se realiza desde lossiguientes tópicos:
 ```
 actuadores/luces/1
-actuadores/vuelo
+actuadores/volar
 actuadores/motores/1
 actuadores/motores/2
 actuadores/motores/3
